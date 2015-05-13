@@ -6,12 +6,10 @@ package com.sears
 
 trait UserValidator {
   def isValidEmail(email: String): Option[String]
-
   def isValidName(name: String): Option[String]
 }
 
 object UserValidator extends UserValidator {
   override def isValidEmail(email: String): Option[String] = None
-
   override def isValidName(name: String): Option[String] = None
 }

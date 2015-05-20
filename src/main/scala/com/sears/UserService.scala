@@ -3,10 +3,20 @@ package com.sears
 /**
  * Created by Abdhesh.Kumar on 13-05-2015.
  */
-class UserService(useDAL: UserDALDomain) extends UserAddress{
-  def createUser(email: String): User = useDAL.create(email)
+class UserService(useDAL: UserDALComponent) extends UserAddress {
 
-  def getUser(email: String): Option[User] = useDAL.getUserByEmail(email)
+  import UserImplicits._
+
+  def createUser(user: User): Int = useDAL.insert(user)
+
+  def getUserByEmail(email: String): Option[User] = useDAL.getByEmail(email)
+
+  def addUser(user: User) = {
+    useDAL.getByEmail(user.email) match {
+      case None => useDAL.insert(user)
+      case Some(_user) =>
+    }
+  }
 }
 
-object UserService extends UserService(new UserDAL)
+object UserService extends UserService(UserDAL)

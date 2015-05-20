@@ -14,10 +14,10 @@ case class Email(emailAddress: String) {
   }
 }
 
-case class User(name: String)
+case class User(name: String, email: String, id: Int = 0)
 
 object UserImplicits {
-  implicit def emailToUser(email: String): User = User(email)
+  implicit def stringToEmail(email: String): Email = Email(email)
 }
 
 

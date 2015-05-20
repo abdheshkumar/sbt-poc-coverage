@@ -11,10 +11,12 @@ class UserService(useDAL: UserDALComponent) extends UserAddress {
 
   def getUserByEmail(email: String): Option[User] = useDAL.getByEmail(email)
 
-  def addUser(user: User) = {
+  def getById(id: Int): Option[User] = useDAL.findById(id)
+
+  def addUser(user: User): Option[Int] = {
     useDAL.getByEmail(user.email) match {
-      case None => useDAL.insert(user)
-      case Some(_user) =>
+      case None => Option(useDAL.insert(user))
+      case Some(_user) => None
     }
   }
 }

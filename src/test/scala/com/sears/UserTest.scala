@@ -8,21 +8,19 @@ import org.scalatest.FunSuite
  */
 class UserTest extends FunSuite with UserDALComponent with H2DBProfile {
 
+  test("Get all Users info") {
+    assert(getUserList.length === 5)
+  }
+
   test("Add new User info") {
     val user = User("test", "test@searsglobaltech.com")
-    assert(insert(user) === 1)
+    assert(insert(user) === 6)
   }
 
-  test("Get all Users info") {
-    val user = User("test", "test@searsglobaltech.com")
-    insert(user)
-    assert(getUserList.length === 2)
-  }
 
   test("Update user info") {
-    val user = User("test", "test@searsglobaltech.com")
-    insert(user)
-    val updatedKnol = user.copy(email = "demo@searsglobaltech.com")
+    val user = User("Santosh", "santosh@mvtechlab.com", 4)
+    val updatedKnol = user.copy(email = "santosh@mvtechlabs.com")
     assert(update(updatedKnol) === 1)
   }
 

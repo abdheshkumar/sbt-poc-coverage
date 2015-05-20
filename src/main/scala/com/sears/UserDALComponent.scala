@@ -34,6 +34,13 @@ trait UserDALComponent {
     }
   }
 
+  def findById(id: Int): Option[User] = {
+    dbObject().withSession {
+      implicit session: Session =>
+        userTable.filter(_.id === id).list.headOption
+    }
+  }
+
   def insert(user: User): Int = {
     dbObject.withSession { implicit session: Session =>
       userTable.returning(userTable.map(_.id)).insert(user)

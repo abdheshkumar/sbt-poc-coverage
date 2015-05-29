@@ -2,6 +2,8 @@ package com.sears
 
 import db.{MySqlDBProfile, Profile}
 
+import scala.slick.lifted.ProvenShape
+
 /**
  * Created by Abdhesh.Kumar on 13-05-2015.
  */
@@ -17,7 +19,7 @@ trait UserDALComponent {
 
     def email: Column[String] = column[String]("email", O.NotNull)
 
-    def * = (name, email, id) <>(User.tupled, User.unapply)
+    def * : ProvenShape[User] = (name, email, id) <>(User.tupled, User.unapply)
   }
 
   val userTable = TableQuery[UserTable]

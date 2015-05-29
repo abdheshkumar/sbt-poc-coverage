@@ -21,7 +21,7 @@ class HarvesterService(harvesterRepository: HarvesterRepository) {
    * Return all harvesters
    * @return Set[Harvester]
    */
-  def harvesters = harvesterRepository.getHarvesters
+  def harvesters: Set[Harvester] = harvesterRepository.getHarvesters
 }
 
 object HarvesterService extends HarvesterService(new HarvesterRepositoryDAL)

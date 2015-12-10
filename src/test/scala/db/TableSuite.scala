@@ -1,7 +1,7 @@
 package db
 
-import com.sears.{User, UserDALComponent}
-import org.scalatest.{BeforeAndAfter, FunSuite}
+import com.sears.{ User, UserDALComponent }
+import org.scalatest.{ BeforeAndAfter, FunSuite }
 import scala.slick.jdbc.meta._
 
 /**
@@ -38,7 +38,6 @@ class TableSuite extends FunSuite with BeforeAndAfter with UserDALComponent with
     val insertCount = insertUser()
     assert(insertCount == 6)
   }
-
 
   after {
     session.close()

@@ -1,7 +1,9 @@
 package com.sears
 
 import db.H2DBProfile
+import org.junit.runner.RunWith
 import org.scalatest.FunSuite
+import org.scalatest.junit.JUnitRunner
 import org.scalatest.mock.MockitoSugar
 import org.mockito.Mockito._
 import org.mockito.Matchers._
@@ -9,6 +11,7 @@ import org.mockito.Matchers._
 /**
  * Created by abdhesh on 5/20/15.
  */
+@RunWith(classOf[JUnitRunner])
 class UserServiceUnitTest extends FunSuite with MockitoSugar {
 
   object UserTestService extends UserService(new UserDALComponent with H2DBProfile)

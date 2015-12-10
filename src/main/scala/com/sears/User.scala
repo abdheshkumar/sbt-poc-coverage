@@ -20,5 +20,3 @@ object UserImplicits {
   implicit def stringToEmail(email: String): Email = Email(email)
 }
 
-
-

@@ -10,7 +10,7 @@ scalaVersion := Version.scala
 scalacOptions ++= Seq("-unchecked", "-feature", "-deprecation", "-language:implicitConversions", "-encoding", "UTF-8")
 
 
-libraryDependencies ++= Dependencies.sparkAkkaHadoop
+libraryDependencies ++= Dependencies.dependencies
 
 ScoverageSbtPlugin.ScoverageKeys.coverageMinimum := 80
 

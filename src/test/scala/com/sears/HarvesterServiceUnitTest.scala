@@ -1,8 +1,7 @@
 package com.sears
 
-import com.sears.harvester.{HarvesterService, HarvesterType, Harvester}
+import com.sears.harvester.{ HarvesterService, HarvesterType, Harvester }
 import org.scalatest.FunSuite
-
 
 /**
  * Created by Abdhesh.Kumar on 14-05-2015.

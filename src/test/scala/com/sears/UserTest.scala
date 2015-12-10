@@ -6,6 +6,7 @@ import org.scalatest.FunSuite
 /**
  * Created by Abdhesh.Kumar on 13-05-2015.
  */
+
 class UserTest extends FunSuite with UserDALComponent with H2DBProfile {
 
   test("Get all Users info") {
@@ -16,7 +17,6 @@ class UserTest extends FunSuite with UserDALComponent with H2DBProfile {
     val user = User("test", "test@searsglobaltech.com")
     assert(insert(user) === 6)
   }
-
 
   test("Update user info") {
     val user = User("Santosh", "santosh@mvtechlab.com", 4)

@@ -1,6 +1,6 @@
 package com.sears
 
-import db.{MySqlDBProfile, Profile}
+import db.{ MySqlDBProfile, Profile }
 
 import scala.slick.lifted.ProvenShape
 
@@ -19,7 +19,7 @@ trait UserDALComponent {
 
     def email: Column[String] = column[String]("email", O.NotNull)
 
-    def * : ProvenShape[User] = (name, email, id) <>(User.tupled, User.unapply)
+    def * : ProvenShape[User] = (name, email, id) <> (User.tupled, User.unapply)
   }
 
   val userTable = TableQuery[UserTable]
@@ -56,7 +56,6 @@ trait UserDALComponent {
       }.update(user)
     }
   }
-
 
   def delete(id: Int): Int = {
     dbObject.withSession { implicit session: Session =>

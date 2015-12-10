@@ -3,8 +3,8 @@ package com.sears
 /**
  * Created by Abdhesh.Kumar on 14-05-2015.
  */
-import org.mockito.Mockito.{verify, when}
-import org.scalatest.{Matchers, WordSpec}
+import org.mockito.Mockito.{ verify, when }
+import org.scalatest.{ Matchers, WordSpec }
 import org.scalatest.mock.MockitoSugar
 
 class ListWordSpec extends WordSpec with Matchers with MockitoSugar {
@@ -20,7 +20,7 @@ class ListWordSpec extends WordSpec with Matchers with MockitoSugar {
 
   "Calling size" should {
     "return 3 for a List with 3 elements" in {
-      val list = List(1,2,3)
+      val list = List(1, 2, 3)
       list.size shouldBe 3
     }
   }

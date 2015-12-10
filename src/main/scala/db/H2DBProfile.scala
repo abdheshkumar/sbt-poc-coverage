@@ -3,7 +3,7 @@ package db
 import com.typesafe.config.ConfigFactory
 import org.slf4j.LoggerFactory
 
-import scala.slick.driver.{H2Driver, JdbcProfile}
+import scala.slick.driver.{ H2Driver, JdbcProfile }
 
 /**
  * Created by Abdhesh.Kumar on 20-05-2015.

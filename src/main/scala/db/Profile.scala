@@ -13,4 +13,3 @@ trait Profile {
   def dbObject(): Database
 }
 
-

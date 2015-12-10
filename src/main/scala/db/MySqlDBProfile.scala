@@ -3,12 +3,12 @@ package db
 import com.typesafe.config.ConfigFactory
 import org.slf4j.LoggerFactory
 
-import scala.slick.driver.{MySQLDriver, JdbcProfile}
+import scala.slick.driver.{ MySQLDriver, JdbcProfile }
 
 /**
  * Created by Abdhesh.Kumar on 20-05-2015.
  */
-trait MySqlDBProfile extends Profile{
+trait MySqlDBProfile extends Profile {
   val driver: JdbcProfile = MySQLDriver
 
   import driver.simple._

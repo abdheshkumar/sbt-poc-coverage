@@ -17,5 +17,3 @@ object HarvesterType extends Enumeration {
   val STATIC, DYNAMIC = Value
 }
 
-
-
